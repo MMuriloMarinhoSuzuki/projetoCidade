@@ -1,75 +1,108 @@
 ﻿.titulo-cli {
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center; /* Opcional: Centralizar o título */
+    color: #1e3a5f; /* Azul profundo */
+    margin-bottom: 35px;
+    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
-    color: #6c757d; /* Cor do texto secundário do Bootstrap */
-    margin-bottom: 15px;
-    text-align: center; /* Opcional: Centralizar o subtítulo */
+    color: #5e6472; /* Cinza azulado suave */
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 500;
 }
 
 hr {
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
     border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Borda mais suave */
+    border-top: 1px solid rgba(30, 58, 95, 0.2); /* Tom suave e elegante */
 }
 
 .col-md-4 {
-    margin: 0 auto; /* Centralizar o formulário em telas maiores */
-    padding: 20px;
-    border: 1px solid #dee2e6; /* Borda leve no formulário */
-    border-radius: 5px;
-    background-color: #f8f9fa; /* Fundo claro para o formulário */
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Leve sombra */
+    margin: 0 auto;
+    padding: 35px;
+    border: 1px solid #d6d6d6;
+    border-radius: 12px;
+    background-color: #fdfdfd; /* Fundo mais claro e limpo */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .form-group {
-    margin-bottom: 1.5rem; /* Aumentar um pouco o espaçamento entre os campos */
+    margin-bottom: 2rem;
 }
 
 .control-label {
-    font-weight: bold;
-    color: #495057; /* Cor do texto principal do Bootstrap */
+    font-weight: 600;
+    color: #37474f; /* Tom escuro e suave para melhor leitura */
+    margin-bottom: 0.5rem;
+    display: block;
 }
 
 .form-control {
-    border: 1px solid #ced4da; /* Borda padrão do Bootstrap */
-    border-radius: 0.25rem;
-    padding: 0.5rem 0.75rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
     width: 100%;
-    box-sizing: border-box; /* Garantir que padding e border não aumentem a largura */
+    box-sizing: border-box;
+    background-color: #ffffff;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+    .form-control:focus {
+        border-color: #6c63ff; /* Roxo suave (destaque moderno) */
+        outline: none;
+        box-shadow: 0 0 5px rgba(108, 99, 255, 0.25);
+    }
+
     .form-control[readonly] {
-        background-color: #e9ecef; /* Cor de fundo para campos somente leitura */
-        opacity: 1; /* Reverter a opacidade padrão para readonly */
+        background-color: #f1f3f5;
+        opacity: 1;
     }
 
 .form-text {
-    font-size: 0.8rem;
-    color: #6c757d; /* Cor do texto muted do Bootstrap */
+    font-size: 0.85rem;
+    color: #868e96;
 }
 
 .text-danger {
-    font-size: 0.9rem;
-    margin-top: 0.25rem;
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+    color: #d63031; /* Vermelho mais atual */
 }
 
 .btn-primary {
-    width: 100%; /* Ocupar a largura total do container */
+    width: 100%;
+    background-color: #6c63ff; /* Roxo moderno */
+    border: none;
+    padding: 12px 18px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
+
+    .btn-primary:hover {
+        background-color: #5848e5;
+    }
 
 .btn-secondary {
-    /* Estilos adicionais para o botão "Voltar" se desejar */
+    background-color: #a8a8a8;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.3s ease;
 }
 
+    .btn-secondary:hover {
+        background-color: #8c8c8c;
+    }
+
 .mt-3 {
-    margin-top: 1.5rem; /* Espaçamento acima do botão "Voltar" */
-    display: block; /* Fazer o botão "Voltar" ocupar a linha inteira */
-    width: 100%; /* Ocupar a largura total */
+    margin-top: 2rem;
+    display: block;
+    width: 100%;
 }
 
 .btn {

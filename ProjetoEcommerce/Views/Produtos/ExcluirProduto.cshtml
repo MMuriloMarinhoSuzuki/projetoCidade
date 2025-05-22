@@ -1,0 +1,36 @@
+﻿@model ProjetoEcommerce.Models.Produto
+
+@{
+    ViewData["Title"] = "Excluir Produto";
+}
+
+<h2 class="text-danger text-center mb-4">Excluir Produto</h2>
+
+<div class="alert alert-warning text-center">
+    <strong>Tem certeza que deseja excluir o produto abaixo?</strong>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <dl class="row border rounded p-4 bg-light shadow-sm">
+            <dt class="col-sm-3">Nome:</dt>
+            <dd class="col-sm-9">@Model.Nome</dd>
+
+            <dt class="col-sm-3">Descrição:</dt>
+            <dd class="col-sm-9">@Model.Descricao</dd>
+
+            <dt class="col-sm-3">Preço:</dt>
+            <dd class="col-sm-9">@Model.Preco.ToString("C")</dd>
+
+            <dt class="col-sm-3">Quantidade:</dt>
+            <dd class="col-sm-9">@Model.quantidade</dd>
+        </dl>
+
+        <form asp-action="Index" method="post" class="mt-4 d-flex justify-content-between">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="IdPRod" />
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>

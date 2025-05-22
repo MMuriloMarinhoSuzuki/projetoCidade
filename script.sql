@@ -14,7 +14,9 @@ CREATE TABLE Cliente(
     NomeCli varchar(50) not null,
     TelCli varchar(20) not null,
     EmailCli varchar(50) not null
-)
+);
+
+insert into Usuario (Id, Nome, Email, Senha) values (null, "Murilo", "Admin@email.com", 1234);
 
 SELECT * FROM Usuario;
 SELECT * FROM Cliente;

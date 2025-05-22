@@ -1,18 +1,15 @@
 ﻿@model ProjetoEcommerce.Models.Usuario;
 
+<link href="~/css/login.css" rel="stylesheet"/>
 
-<link href="~/css/login.css" rel="stylesheet" />
-
-<h1 class="login-title">Login</h1>
-
-<form asp-action="Login" method="post" class="login-form">
-    <div class="form-group">
-        <label>Email:</label>
-        <input type="email" name="email" required  class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label>Senha:</label>
-        <input type="password" name="senha" required class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
+<div class="login-container">
+    <h1 class="login-title">Cafeteria</h1>
+    <form asp-action="Login" method="post" class="login-form">
+        <input asp-for="Email" type="email" id="Email" placeholder="E-mail" required />
+        <span asp-validation-for="Email"> </span>
+        <input asp-for="Senha" type="password" id="Senha" placeholder="Senha" required />
+        <span asp-validation-for="Senha"> </span>
+        <button type="submit">Entrar</button>
+        <p id="login-error" class="error-msg"></p>
+    </form>
+</div>

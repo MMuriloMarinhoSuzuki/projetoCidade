@@ -2,11 +2,13 @@
     ViewData["Title"] = "Home Page";
 }
 
+<link href="~/css/index.css" rel="stylesheet" />
+
 <div class="text-center">
-    <h1 class="display-4">Bem Vindo á Página Home</h1>
-    <video autoplay muted loop 
+    <h1 class="display-4" id="titHome">Bem Vindo à Java and Bytes!</h1>
+    <video autoplay muted loop  
            style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;">
-        <source src="@Url.Content("~/video/video.mp4")" type="video/mp4" />
+        <source src="@Url.Content("~/video/videos.mp4")" type="video/mp4" />
         Seu navegador não suporta vídeos.
     </video>
 

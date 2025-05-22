@@ -1,0 +1,10 @@
+﻿#titHome {
+    color: white;
+    font-family: "Manrope", sans-serif;
+    font-size:2vw;
+}
+@media (max-width: 768px){
+    #titHome {
+        font-size: 5vw;
+    }
+}

@@ -1,26 +1,41 @@
-﻿.titulo-cli
-{
-    text-align:center;
-    color:blue;
-    margin-bottom:20px;
+﻿.titulo-cli {
+    text-align: center;
+    color: #2c3e50; /* Azul escuro elegante */
+    margin-bottom: 30px; /* Mais espaço abaixo do título */
 }
-.col-md-4{
-    margin: 0 auto;
-    padding:20px;
-    border:1px solid #555;
-    background:#ffd800;
-    box-shadow:2px 5px #333;
+
+.col-md-4 {
+    margin: 30px auto; /* Espaço superior e inferior aumentado */
+    padding: 25px;
+    border: 1px solid #aaa; /* Cor da borda mais suave */
+    background: #f0f8ff; /* Azul muito claro (AliceBlue) */
+    box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.2); /* Sombra mais suave e moderna */
+    border-radius: 8px;
 }
+
 .form-group {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px 10px;
+    border: 1px solid #bbb;
+    border-radius: 12px;
+    padding: 15px;
     width: 100%;
     box-sizing: border-box;
-   
+    margin-bottom: 20px; /* Espaçamento entre os grupos de formulário */
+    background-color: #ffffff; /* Fundo branco para destaque */
 }
+
 .btn {
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
+    background-color: #3498db; /* Azul vibrante */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+    .btn:hover {
+        background-color: #2980b9; /* Tom mais escuro ao passar o mouse */
+    }
