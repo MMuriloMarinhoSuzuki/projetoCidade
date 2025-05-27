@@ -26,11 +26,11 @@
             <dd class="col-sm-9">@Model.quantidade</dd>
         </dl>
 
-        <form asp-action="Index" method="post" class="mt-4 d-flex justify-content-between">
+        <form asp-action="Produto" method="post" class="mt-4 d-flex justify-content-between">
             @Html.AntiForgeryToken()
             <input type="hidden" asp-for="IdPRod" />
             <button type="submit" class="btn btn-danger">Excluir</button>
-            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            <a asp-action="Produto" class="btn btn-secondary">Cancelar</a>
         </form>
     </div>
 </div>

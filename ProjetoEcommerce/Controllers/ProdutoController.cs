@@ -37,7 +37,7 @@ namespace ProjetoEcommerce.Controllers
             if (ModelState.IsValid)
             {
                 _produtoRepositorio.Cadastrar(produto);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Produto));
             }
 
             // Retorna a View com os erros de validação, se houver
@@ -72,7 +72,7 @@ namespace ProjetoEcommerce.Controllers
                 {
                     if (_produtoRepositorio.Atualizar(produto))
                     {
-                        return RedirectToAction(nameof(Index));
+                        return RedirectToAction(nameof(Produto));
                     }
                 }
                 catch (Exception)
@@ -102,7 +102,7 @@ namespace ProjetoEcommerce.Controllers
         public IActionResult ConfirmarExclusao(int id)
         {
             _produtoRepositorio.Excluir(id);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Produto));
         }
     }
 }
