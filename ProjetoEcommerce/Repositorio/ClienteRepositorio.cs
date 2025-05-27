@@ -21,7 +21,7 @@ namespace ProjetoEcommerce.Repositorio
                     // Abre a conexão com o banco de dados MySQL
                     conexao.Open();
                     // Cria um novo comando SQL para inserir dados na tabela 'cliente'
-                    MySqlCommand cmd = new MySqlCommand("insert into cliente (NomeCLi,TelCli,EmailCli) values (@nome, @telefone, @email)", conexao); // @: PARAMETRO
+                    MySqlCommand cmd = new MySqlCommand("insert into Cliente (NomeCLi,TelCli,EmailCli) values (NomeCLi=@nome, TelCli=@telefone, EmailCli=@email)", conexao); // @: PARAMETRO
                                                                                                                                                  // Adiciona um parâmetro para o nome, definindo seu tipo e valor
                     cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = cliente.NomeCli;
                     // Adiciona um parâmetro para o telefone, definindo seu tipo e valor
@@ -46,7 +46,7 @@ namespace ProjetoEcommerce.Repositorio
                     // Abre a conexão com o banco de dados MySQL
                     conexao.Open();
                     // Cria um novo comando SQL para atualizar dados na tabela 'cliente' com base no código
-                    MySqlCommand cmd = new MySqlCommand("Update cliente set NomeCli=@nome, TelCli=@telefone, EmailCli=@email " + " where CodCli=@codigo ", conexao);
+                    MySqlCommand cmd = new MySqlCommand("Update Cliente set NomeCli=@nome, TelCli=@telefone, EmailCli=@email " + " where CodCli=@codigo ", conexao);
                     // Adiciona um parâmetro para o código do cliente a ser atualizado, definindo seu tipo e valor
                     cmd.Parameters.Add("@codigo", MySqlDbType.Int32).Value = cliente.CodCli;
                     // Adiciona um parâmetro para o novo nome, definindo seu tipo e valor
@@ -83,7 +83,7 @@ namespace ProjetoEcommerce.Repositorio
                     // Abre a conexão com o banco de dados MySQL
                     conexao.Open();
                     // Cria um novo comando SQL para selecionar todos os registros da tabela 'cliente'
-                    MySqlCommand cmd = new MySqlCommand("SELECT * from cliente", conexao);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * from Cliente", conexao);
 
                     // Cria um adaptador de dados para preencher um DataTable com os resultados da consulta
                     MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -121,7 +121,7 @@ namespace ProjetoEcommerce.Repositorio
                     // Abre a conexão com o banco de dados MySQL
                     conexao.Open();
                     // Cria um novo comando SQL para selecionar um registro da tabela 'cliente' com base no código
-                    MySqlCommand cmd = new MySqlCommand("SELECT * from cliente where CodCli=@codigo ", conexao);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * from Cliente where CodCli=@codigo ", conexao);
 
                     // Adiciona um parâmetro para o código a ser buscado, definindo seu tipo e valor
                     cmd.Parameters.AddWithValue("@codigo", Codigo);
@@ -163,7 +163,7 @@ namespace ProjetoEcommerce.Repositorio
                     conexao.Open();
 
                     // Cria um novo comando SQL para deletar um registro da tabela 'cliente' com base no código
-                    MySqlCommand cmd = new MySqlCommand("delete from cliente where CodCli=@codigo", conexao);
+                    MySqlCommand cmd = new MySqlCommand("delete from Cliente where CodCli=@codigo", conexao);
 
                     // Adiciona um parâmetro para o código a ser excluído, definindo seu tipo e valor
                     cmd.Parameters.AddWithValue("@codigo", Id);
