@@ -98,6 +98,8 @@ namespace ProjetoEcommerce.Repositorio
             }
         }
 
+        //excluir produtos 
+
         public void Excluir(int id)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))

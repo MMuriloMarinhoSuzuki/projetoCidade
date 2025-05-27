@@ -16,7 +16,17 @@ CREATE TABLE Cliente(
     EmailCli varchar(50) not null
 );
 
+create table Produto(
+IdPRod int primary key auto_increment,
+Nome varchar (50),
+Descricao varchar (100),
+Preco decimal (10, 2),
+quantidade varchar (100)
+);
+
+
 insert into Usuario (Id, Nome, Email, Senha) values (null, "Murilo", "Admin@email.com", 1234);
 
 SELECT * FROM Usuario;
 SELECT * FROM Cliente;
+SELECT * FROM Produto;
