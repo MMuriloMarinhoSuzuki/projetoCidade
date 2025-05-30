@@ -1,7 +1,7 @@
-﻿@model ProjetoEcommerce.Models.Produto
+﻿@model ProjetoEcommerce.Models.Produto;
 
 @{
-    ViewData["Title"] = "Excluir Produto";
+    ViewData["Title"] = "ExcluirProduto";
 }
 
 <h2 class="text-danger text-center mb-4">Excluir Produto</h2>
@@ -20,17 +20,19 @@
             <dd class="col-sm-9">@Model.Descricao</dd>
 
             <dt class="col-sm-3">Preço:</dt>
-            <dd class="col-sm-9">@Model.Preco.ToString("C")</dd>
+            <dd class="col-sm-9">@Model.Preco</dd>
 
             <dt class="col-sm-3">Quantidade:</dt>
-            <dd class="col-sm-9">@Model.quantidade</dd>
+            <dd class="col-sm-9">@Model.Quantidade</dd>
         </dl>
 
         <form asp-action="Produto" method="post" class="mt-4 d-flex justify-content-between">
             @Html.AntiForgeryToken()
             <input type="hidden" asp-for="IdPRod" />
-            <button type="submit" class="btn btn-danger">Excluir</button>
+
+            <button asp-controller="Produto" type="submit" class="btn btn-danger">Excluir</button>
             <a asp-action="Produto" class="btn btn-secondary">Cancelar</a>
         </form>
+
     </div>
 </div>

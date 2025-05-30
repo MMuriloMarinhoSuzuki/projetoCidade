@@ -16,7 +16,7 @@
             <th>@Html.DisplayNameFor(model => model.First().Nome)</th>
             <th>@Html.DisplayNameFor(model => model.First().Descricao)</th>
             <th>@Html.DisplayNameFor(model => model.First().Preco)</th>
-            <th>@Html.DisplayNameFor(model => model.First().quantidade)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Quantidade)</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -28,7 +28,7 @@
                 <td>@Html.DisplayFor(modelItem => item.Nome)</td>
                 <td>@Html.DisplayFor(modelItem => item.Descricao)</td>
                 <td>@item.Preco.ToString("C")</td>
-                <td>@Html.DisplayFor(modelItem => item.quantidade)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantidade)</td>
                 <td>
                     @Html.ActionLink("Editar", "EditarProduto", new { id = item.IdPRod }) |
                     @Html.ActionLink("Excluir", "ExcluirProduto", new { id = item.IdPRod },

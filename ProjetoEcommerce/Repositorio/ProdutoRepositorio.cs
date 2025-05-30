@@ -14,11 +14,11 @@ namespace ProjetoEcommerce.Repositorio
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO produto (Nome, Descricao, Preco, quantidade) VALUES (@nome, @descricao, @preco, @quantidade)", conexao);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Produto (Nome, Descricao, Preco, quantidade) VALUES (@nome, @descricao, @preco, @quantidade)", conexao);
                 cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = produto.Nome;
                 cmd.Parameters.Add("@descricao", MySqlDbType.VarChar).Value = produto.Descricao ?? string.Empty;
                 cmd.Parameters.Add("@preco", MySqlDbType.Decimal).Value = produto.Preco;
-                cmd.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = produto.quantidade;
+                cmd.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = produto.Quantidade;
                 cmd.ExecuteNonQuery();
             }
         }
@@ -36,7 +36,7 @@ namespace ProjetoEcommerce.Repositorio
                     cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = produto.Nome;
                     cmd.Parameters.Add("@descricao", MySqlDbType.VarChar).Value = produto.Descricao ?? string.Empty;
                     cmd.Parameters.Add("@preco", MySqlDbType.Decimal).Value = produto.Preco;
-                    cmd.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = produto.quantidade;
+                    cmd.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = produto.Quantidade;
                     int linhasAfetadas = cmd.ExecuteNonQuery();
                     return linhasAfetadas > 0;
                 }
@@ -68,7 +68,7 @@ namespace ProjetoEcommerce.Repositorio
                         Nome = dr["Nome"].ToString(),
                         Descricao = dr["Descricao"].ToString(),
                         Preco = Convert.ToDecimal(dr["Preco"]),
-                        quantidade = Convert.ToInt32(dr["quantidade"])
+                        Quantidade = Convert.ToInt32(dr["quantidade"])
                     });
                 }
             }
@@ -92,7 +92,7 @@ namespace ProjetoEcommerce.Repositorio
                     produto.Nome = dr["Nome"].ToString();
                     produto.Descricao = dr["Descricao"].ToString();
                     produto.Preco = Convert.ToDecimal(dr["Preco"]);
-                    produto.quantidade = Convert.ToInt32(dr["quantidade"]);
+                    produto.Quantidade = Convert.ToInt32(dr["quantidade"]);
                 }
                 return produto;
             }
@@ -105,9 +105,10 @@ namespace ProjetoEcommerce.Repositorio
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("DELETE FROM Produto WHERE IdPRod=@id", conexao);
+                MySqlCommand cmd = new MySqlCommand("DELETE FROM Produto WHERE IdPRod = @id", conexao);
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
+                conexao.Close();
             }
         }
     }

@@ -102,7 +102,7 @@ namespace ProjetoEcommerce.Controllers
         public IActionResult ConfirmarExclusao(int id)
         {
             _produtoRepositorio.Excluir(id);
-            return RedirectToAction(nameof(Produto));
+            return RedirectToAction("Produto");
         }
     }
 }
